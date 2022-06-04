@@ -139,9 +139,7 @@ let seprateEmailsAccordingTypes = function (uniqueUsers, res) {
       } else if (user.type == "bcc") {
         bccEmails.push(user);
       } else {
-        res.status(400).json({
-          message: "Please mention the type of emails => to/cc/bcc",
-        });
+        throw new Error("Please mention the type of emails => to/cc/bcc");
       }
     }
   });
